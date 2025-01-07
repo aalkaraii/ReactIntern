@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3eeff;
+}
+header {
+  background-color: #8a4fff;
+  color: white;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.star {
+  color: gold;
+}
+.one {
+  background-color: rgba(86, 23, 169, 0.911);
+  padding: 10px;
+  margin: 50;
+  font-family: DM Sans;
+  border-radius: 6px;
+  width: 40px;
+}
+.fivestar {
+  width: 40px;
+}
+h1 span {
+  color: #ffd166;
+  background-color: #8a4fff;
+}
+.instagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin: 10px;
+  border-color: white;
+  box-shadow: 10px;
+  padding: 2px;
+}
+.instagram.instagramcontent {
+  display: flex;
+  flex-direction: column;
+}
+.twitter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin: 10px;
+  border-color: white;
+  padding: 2px;
+}
+.twitter.twittercontent {
+  display: flex;
+  flex-direction: column;
+}
+.two {
+  display: flex;
+  padding: 10px;
+  margin: 50;
+}
+.second {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 10px;
+  margin: 50;
+  height: fit-content;
+  width: 320px;
+}
+.account-icons {
+  display: flex;
+  background-color: white;
+}
+.calendar {
+  background-color: #8a4fff;
+  padding: 10px;
+  border-radius: 15px;
+  margin-top: 10px;
+  display: flex;
+  gap: 20px;
+  color: white;
+}
+.month,
+.week {
+  background-color: #8a4fff;
+}
+.week {
+  background-color: #f3eeff;
+}
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  background-color: #ffd166;
+}
+.three {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffd166;
+
+  margin: 50;
+  height: fit-content;
+}
+.four,
+.five,
+.sixth,
+.seven,
+.eight {
+  background-color: #d4c4f4;
+  padding: 20px;
+
+  border-radius: 10px;
+  height: fit-content;
+  width: fit-content;
+}
+
+.sixth {
+  background-color: white;
+  gap: 10px;
+  width: 320px;
+}
+.five {
+  background-color: #8a4fff;
+}
+.eight {
+  background-color: #ffd166;
+  height: fit-content;
+}
+.chart,
+.follower-growth {
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+}
+.line {
+  width: 290px; /* Adjust horizontal length */
+  height: 1px;
+  background-color: gray;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 8;
+}
+.week {
+  display: flex;
+  gap: 6px;
+  color: gray;
+  background-color: white;
+  padding: 10px;
+}
+.growth-rate {
+  background-color: aquamarine;
+  color: rgb(9, 226, 100);
+  border-radius: 10px;
+  padding: 3px;
+  height: 30px;
+  margin-top: 10px;
+}
+.rate {
+  display: flex;
+  gap: 20px;
+  background-color: white;
+}
+.arrow,
+.create-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin: 10px;
+  border-color: white;
+  box-shadow: 10px;
+  padding: 5px;
+  gap: 10px;
+}
+.create-post {
+  padding: 10px;
+  font-weight: bold;
+  background-color: #ffd166;
+}
+.follower-text {
+  color: white;
+  background-color: #8a4fff;
+}
+.card,
+.followers {
+  background-color: #8a4fff;
+}
+.question,
+.response {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  margin: 10px;
+  border-color: white;
+  box-shadow: 10px;
+  padding: 5px;
+  gap: 10px;
+}
+.tips,
+.answer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px;
+  background-color: white;
+  height: fit-content;
+  font-size: x-small;
+}
+.chat {
+  background-color: white;
+  border-radius: 15px;
+}
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+}
+.container {
+  display: grid;
+  height: 100vh; /* Full viewport height */
+  gap: 16px;
+  padding: 16px;
+  grid-template-columns: 200px 300px 1fr 200px;
+  grid-template-rows: repeat(3, 200px); /* Ensure equal row heights */
+  grid-template-areas:
+    "seven one one four"
+    "seven two three four"
+    "eight six five four";
+}
+
+.box-7 {
+  grid-area: seven;
+  grid-column: 1 / span 1; /* Start from the first column */
+  grid-row: 1 / span 2; /* Span 2 rows */
+}
+
+.box-8 {
+  grid-area: eight;
+  grid-column: 1 / span 1; /* Start from the first column */
+  grid-row: 3;
+  grid-row-start: 2;
+  margin-top: 100px; /* Position box-8 directly below box-7 */
+}
+
+/* Styling for other boxes */
+.box-1 {
+  grid-area: one;
+  width: 900px;
+  height: fit-content;
+  margin-bottom: 50px;
+}
+.box-2 {
+  grid-area: two;
+  margin-top: 50px;
+}
+.box-3 {
+  grid-area: three;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.box-4 {
+  grid-area: four;
+  grid-row: span 8;
+}
+.box-5 {
+  grid-area: five;
+  gap: 50px;
+  margin-top: 100px;
+  margin-left: 50px;
+  width: 500px;
+}
+.box-6 {
+  grid-area: six;
+
+  margin-top: 100px;
+}
