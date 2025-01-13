@@ -21,33 +21,31 @@ const App = () => {
     <>
       {/* <div style={mode}> */}
       <div style={{ backgroundColor }}>
-        <div className="flex gap-5 p-5">
-          <button
-            onClick={handleToggle}
-            className="text-black-500  bg-sky-600 border border-gray-300 rounded-full p-3 shadow-sm w-10px flex justify-center items-center h-fit "
-          >
-            change Mode ☾ ⋆
-          </button>
-          <nav>
-            <ul className="gap-3 flex">
-              <button className="text-black-500  bg-sky-600 border border-gray-300 rounded-full p-3 shadow-sm">
-                <Link to="/FirstPage">posts</Link>
-              </button>
-              {/* <button className="text-black-500  bg-sky-600 border border-gray-300 rounded-full p-3 shadow-sm">
+        <nav>
+          <ul className=" flex  ">
+            <button
+              onClick={handleToggle}
+              className="text-white  bg-black border border-gray-300 rounded-2xl p-3 shadow-sm w-10px flex justify-center items-center h-fit mt-10 ml-10"
+            >
+              change Mode ☾ ⋆
+            </button>
+            <button className="text-white bg-black border border-gray-300 rounded-2xl p-3 shadow-sm mt-10 ml-10">
+              <Link to="/FirstPage">posts</Link>
+            </button>
+            {/* <button className="text-black-500  bg-sky-600 border border-gray-300 rounded-full p-3 shadow-sm">
                 <Link to="/SecondPage/:postId"> second page</Link>
               </button> */}
-              <button className="text-black-500  bg-sky-600 border border-gray-300 rounded-full p-3 shadow-sm">
-                <Link to="/PhotoPage">Images </Link>
-              </button>
-            </ul>
-          </nav>
-
-          <Routes>
-            <Route path="/FirstPage" element={<FirstPage />} />
-            <Route path="/SecondPage/:postId" element={<SecondPage />} />
-            <Route path="/PhotoPage" element={<PhotoPage />} />
-          </Routes>
-        </div>
+            <button className="text-white  bg-black border border-gray-300 rounded-2xl p-3 shadow-sm mt-10 ml-10">
+              <Link to="/PhotoPage">Images </Link>
+            </button>
+          </ul>
+        </nav>
+        |
+        <Routes>
+          <Route path="/FirstPage" element={<FirstPage />} />
+          <Route path="/SecondPage/:postId" element={<SecondPage />} />
+          <Route path="/PhotoPage" element={<PhotoPage />} />
+        </Routes>
       </div>
     </>
   );
