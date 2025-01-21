@@ -29,9 +29,12 @@ export const ThemeProvider = ({ children }) => {
   const darkIcon = isDarkTheme ? <FaSun /> : <FaMoon />;
 
   const listColor = isDarkTheme
-    ? { backgroundColor: "#2a2d3e", color: "white", width: 400 }
-    : { backgroundColor: "white", color: "black", width: 400 };
+    ? { backgroundColor: "#2a2d3e", color: "white" }
+    : { backgroundColor: "white", color: "black" };
 
+  const taskColor = isDarkTheme
+    ? { backgroundColor: "#171e32" }
+    : { backgroundColor: "#e0e4f0" };
   return (
     <ThemeContext.Provider
       value={{
@@ -41,6 +44,7 @@ export const ThemeProvider = ({ children }) => {
         bgColor,
         darkIcon,
         listColor,
+        taskColor,
       }}
     >
       {children}
