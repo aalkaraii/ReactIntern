@@ -2,12 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../BackgroundChange/BackgroundChange";
 import ClearRoundedIcon from "@mui/icons-material/ClearRounded";
 import RoundedCheckBox from "../RoundedCheckBox";
+import { toast } from "react-toastify";
 
 const HomePage = () => {
   const { bgColor, listColor, taskColor } = useContext(ThemeContext);
   const [check, setCheck] = useState();
-
-  const taskStatus = ["all", "active", "completed"];
   const [status, setStatus] = useState("all");
   const [tasks, setTasks] = useState([
     {
@@ -39,16 +38,25 @@ const HomePage = () => {
   ]);
   const taskCounts = {
     all: tasks.length,
-    active: tasks.filter((task) => task.status === "active").length,
-    completed: tasks.filter((task) => task.status === "completed").length,
+    active: tasks.filter((task) => task.status === "active" && !task.isChecked)
+      .length,
+    completed: tasks.filter(
+      (task) => task.status === "completed" && task.isChecked
+    ).length,
   };
   const handelDelete = (id) => {
     const deleteTask = tasks.filter((task) => task.id !== id);
+    toast.error("Task Deleted !");
     setTasks(deleteTask);
   };
   const handleAllDelete = () => {
     const deleteTask = tasks.filter((task) => !task.isChecked);
     setTasks(deleteTask);
+    if (deleteTask.length < tasks.length) {
+      toast.error("Deleted ");
+    } else {
+      toast.info("nothing to delete");
+    }
   };
 
   const filteredTasks = tasks.filter((task) => {
@@ -62,7 +70,13 @@ const HomePage = () => {
   const handleCheckToggle = (id) => {
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === id ? { ...task, isChecked: !task.isChecked } : task
+        task.id === id
+          ? {
+              ...task,
+              isChecked: !task.isChecked,
+              status: !task.isChecked ? "completed" : "active",
+            }
+          : task
       )
     );
   };
@@ -88,6 +102,8 @@ const HomePage = () => {
         let task = { id: tasks.length + 2, text: newTask, status: "active" };
         setTasks((prev) => [...prev, task]);
         setCheck(true);
+        setNewTask("");
+        toast.success("success fully added");
       }
     }
   };
@@ -96,11 +112,11 @@ const HomePage = () => {
     <div style={bgColor} className="relative h-[62vh] md:h-[62vh]">
       <div
         // style={listColor}
-        className="absolute top-[-7%] left-1/2 transform -translate-x-1/2 -translate-y-1/4 flex justify-center items-center flex-col pt-4 pb-4 z-10  "
+        className="absolute top-[-7%] left-1/2 transform -translate-x-1/2 -translate-y-1/4 flex justify-center items-center flex-col pt-4 pb-4 z-10 sm:min-w-full "
       >
         <div className="pl-1 ">
           <div
-            className=" mt-2 mb-2  flex h-14 p-5 rounded-md shadow-2xl"
+            className=" mt-2 mb-2  flex h-14 p-5 rounded-md shadow-2xl gap-2"
             style={listColor}
           >
             <div>
@@ -111,7 +127,7 @@ const HomePage = () => {
             </div>
             <input
               style={{ ...listColor, outline: "none" }}
-              className=" mt-1 h-4 "
+              className=" mt-1 h-4 pr "
               placeholder=" Create a new todo list "
               type="text"
               value={newTask}
