@@ -51,15 +51,23 @@ const Team = () => {
   ];
 
   return (
-    <div className="p-6 ">
-      <header className="text-2xl font-bold mb-4">Meet Our Team</header>
+    <div className="p-4 pt-20 ">
+      <div className="flex gap-2">
+        <header className="text-2xl font-bold mb-4 bg-[#B9FF66] p-1 rounded-sm ">
+          Team
+        </header>
+        <div className="w-[473px]">
+          Meet the skilled and experienced team behind our successful digital
+          marketing strategies
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {teamMembers.map((member, index) => (
           <div
             key={index}
             className="border rounded-lg p-4 shadow-md bg-white flex flex-col items-center"
           >
-            <div className="flex items-center justify-between w-full mb-4 gap-4">
+            <div className="flex items-center justify-between w-full mb-4 gap-4 relative">
               {/* Member's image */}
               <img
                 src={member.img}
@@ -74,7 +82,7 @@ const Team = () => {
               <img
                 src="src/assets/Linkdin.png"
                 alt="LinkedIn"
-                className="h-[34px] w-[34px]"
+                className="h-[34px] w-[34px] absolute top-2 right-0"
               />
             </div>
             {/* Separator */}
@@ -86,9 +94,14 @@ const Team = () => {
             <p className="text-gray-700 text-center">{member.skills}</p>
           </div>
         ))}
+        <div className="md:hidden flex justify-between items-center mt-2  ">
+          <button className=" bg-black text-white p-3 rounded-xl pl-10 pr-10 w-[758px] cursor-pointer">
+            See all team
+          </button>
+        </div>
       </div>
-      <div className="flex justify-end align-end mt-10">
-        <button className="md:hi bg-black text-white p-3 rounded-xl pl-10 pr-10">
+      <div className="flex justify-end align-end mt-10 ">
+        <button className="hidden md:flex bg-black text-white p-3 rounded-xl pl-10 pr-10 cursor-pointer">
           See all team
         </button>
       </div>

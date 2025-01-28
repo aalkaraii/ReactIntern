@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
+import FirstPage from "../../FirstPage.jsx/FirstPage";
 import AboutUs from "../../Pages/AboutUs/AboutUs";
-import UseCases from "../../Pages/UseCases/UseCases";
 import NavServices from "../../Pages/NavServices/NavServices";
+import UseCases from "../../Pages/UseCases/UseCases";
 import Pricing from "../../Pages/Pricing/Pricing";
 import Blog from "../../Pages/Blog/Blog";
-import FirstPage from "../../FirstPage.jsx/FirstPage";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);

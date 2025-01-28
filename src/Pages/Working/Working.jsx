@@ -1,41 +1,103 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Working = () => {
   const work = [
-    { id: 1, text: "Consultation" },
-    { id: 2, text: "Research and Strategy Development" },
-    { id: 3, text: "Implementation" },
-    { id: 4, text: "Monitoring and Optimization" },
-    { id: 5, text: "Reporting and Communication" },
-    { id: 6, text: "Continual Improvement" },
+    {
+      id: 1,
+      text: "Consultation",
+      context:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+    {
+      id: 2,
+      text: "Research and Strategy Development",
+      context:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+    {
+      id: 3,
+      text: "Implementation",
+      context:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+    {
+      id: 4,
+      text: "Monitoring and Optimization",
+      context:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+    {
+      id: 5,
+      text: "Reporting and Communication",
+      context:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
+    {
+      id: 6,
+      text: "Continual Improvement",
+      context:
+        "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+    },
   ];
 
+  const [iconState, setIconState] = useState(Array(work.length).fill(false));
+
+  const changeIcon = (index) => {
+    setIconState((prevState) => {
+      const newState = [...prevState];
+      newState[index] = !newState[index];
+      return newState;
+    });
+  };
+
   return (
-    <div className="bg-red">
-      <div className="flex h-[51px]">
-        <header className="bg-[#B9FF66] w-fit p-1 rounded-sm font-semibold">
-          Our Working Process
-        </header>
+    <div className="bg-red pt-20 p-4">
+      <div className="flex h-[51px] p-2 gap-4">
+        <div className="text-2xl p-1 flex-col gap-1 lg:w-52 inline-block">
+          <span className="inline bg-[#B9FF66] rounded-lg font-bold">
+            Our Working Process
+          </span>
+        </div>
         <div className="w-[292px]">
           Step-by-Step Guide to Achieving Your Business Goals
         </div>
       </div>
-      <div className="flex flex-col gap-[30px] mt-6">
-        {work.map((item) => (
+      <div className="flex flex-col gap-[30px] pt-16 ">
+        {work.map((item, index) => (
           <div
             key={item.id}
-            className="border-b-3 rounded-3xl border-black border-1 p-[41px] flex bg-[#F3F3F3]"
+            className={`border-b-3 rounded-3xl border-black border-1 p-[41px] flex relative ${
+              iconState[index] ? "bg-[#B9FF66]" : "bg-[#F3F3F3]"
+            }`}
           >
             <div className="flex justify-between items-center w-full">
-              <div className="flex">
-                <div className="text-3xl font-medium pr-3">0{item.id}</div>
-                <div className="font-semibold pt-2">{item.text}</div>
+              <div>
+                <div className="flex">
+                  <div className="text-3xl font-medium pr-3">0{item.id}</div>
+                  <div className="font-semibold pt-2">{item.text}</div>
+                </div>
+                <div
+                  className={`flex flex-col ${
+                    iconState[index] ? "flex" : "hidden"
+                  }`}
+                >
+                  <div className="pt-[30px] pb-[30px]">
+                    <div className="bg-gray-500 h-0.5 w-full"></div>
+                  </div>
+                  <div>{item.context}</div>
+                </div>
               </div>
-              <button className="cursor-pointer">
+              <button
+                className="cursor-pointer h-[50px] w-[68px] absolute right-4 top-4"
+                onClick={() => changeIcon(index)}
+              >
                 <img
-                  src="src/assets/add.png"
-                  className="h-[58px] w-[58px]"
-                  alt="Add Icon"
+                  src={
+                    iconState[index]
+                      ? "src/assets/minus.png"
+                      : "src/assets/add.png"
+                  }
+                  alt={iconState[index] ? "minus" : "add"}
                 />
               </button>
             </div>

@@ -43,26 +43,26 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex max-w-[1280px] flex-col gap-4 p-4 justify-center items-center pt-9 md:justify-start md:items-start">
+    <div className="flex  flex-col gap-4 p-4 justify-center items-center pt-30 md:justify-start md:items-start">
       <div className="md:flex md:flex-row md:justify-start md:items-start gap-4 flex flex-col justify-center items-center md:pl-10  ">
-        <div className="p-1 bg-[#B9FF66] h-fit w-fit font-medium text-3xl rounded-2xl ">
+        <div className="p-1 inline-block bg-[#B9FF66]  w-fit font-medium text-3xl rounded-2xl ">
           Services
         </div>
-        <div className="md:flex md:flex-col gap-4 lg:w-1/2 justify-center items-center text-center md:text-lg">
+        <div className="md:flex md:flex-col gap-4 md:w-1/2 justify-center items-center text-center md:text-md">
           At our digital marketing agency, we offer a range of services to help
           businesses grow and succeed online. These services include:
         </div>
       </div>
-      <div className="md:flex md:flex-row md:justify-center md:items-center  flex flex-col justify-center items-center cursor-pointer pl-[100px] gap-[40px]">
-        <div className="grid grid-cols-1 lg:gap-40 lg:grid-cols-2  ">
+      <div className="md:flex md:flex-row md:justify-center md:items-center  flex flex-col justify-center items-center cursor-pointer  gap-[40px]">
+        <div className="grid grid-cols-1 md:gap-[40px] gap-8 md:grid-cols-2  ">
           {card.map((item, index) => (
             <div
-              className="bg-gray-200 flex rounded-4xl border-2 border-black border-b-4 md:w-[600px] md:[310px]  w-fit  p-[50px]"
+              className="bg-gray-200 flex rounded-4xl border-2 border-black border-b-4 md:w-[600px] md:h-[310px] md:[310px]    p-[50px]"
               key={index}
               style={{ backgroundColor: item.color }}
             >
               <div className=" justify-between p-2">
-                <div className="text-2xl p-1 flex-col gap-1 lg:w-52 rounded-md inline-block ">
+                <div className="text-2xl p-1 flex-col gap-1 md:w-52 rounded-md inline-block ">
                   <span
                     className="inline"
                     style={{ backgroundColor: item.textbg }}
@@ -79,7 +79,7 @@ const Services = () => {
                     alt="Arrow Icon"
                     className="h-6"
                   />
-                  <div className="hidden md:flex lg:flex">Learn more</div>
+                  <div className="hidden md:flex md:flex">Learn more</div>
                 </button>
               </div>
               <img

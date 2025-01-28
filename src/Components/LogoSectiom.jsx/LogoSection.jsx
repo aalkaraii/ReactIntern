@@ -6,7 +6,7 @@ import netflix from "../../assets/netflix.png";
 import notion from "../../assets/notion.png";
 import zoom from "../../assets/zoom.png";
 
-function Logos() {
+function LogoSection() {
   const logos = [
     { id: 1, src: amazon },
     { id: 2, src: dribble },
@@ -25,4 +25,4 @@ function Logos() {
   );
 }
 
-export default Logos;
+export default LogoSection;
