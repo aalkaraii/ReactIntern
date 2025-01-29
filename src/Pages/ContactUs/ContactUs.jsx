@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <div className="bg-white min-h-screen p-4 ">
+    <div className="bg-white h-fit p-4 pt-20 ">
       <div className="flex flex-row gap-3 ">
         <p className="bg-[#B9FF66] inline-block p-1 font-bold text-2xl rounded-lg ">
           Contact Us
@@ -12,7 +12,7 @@ const ContactUs = () => {
         </p>
       </div>
       <div className="pt-[50px] ">
-        <div className="flex flex-row lg:flex-row bg-[#F3F3F3] relative max-w-[1240px] mx-auto rounded-4xl  overflow-hidden">
+        <div className="flex flex-row lg:flex-row bg-[#F3F3F3] relative max-w-[1240px] m-auto rounded-4xl  overflow-hidden">
           <div className="flex flex-col flex-1 p-6 lg:p-10 gap-2 ">
             <div className="max-w-[556px] flex flex-col">
               <div className="flex gap-2 ">

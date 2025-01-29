@@ -101,7 +101,7 @@ const Team = () => {
         </div>
       </div>
       <div className="flex justify-end align-end mt-10 ">
-        <button className="hidden md:flex bg-black text-white p-3 rounded-xl pl-10 pr-10 cursor-pointer">
+        <button className="hidden md:flex bg-black text-white p-3 rounded-xl pl-12 pr-12 cursor-pointer">
           See all team
         </button>
       </div>
