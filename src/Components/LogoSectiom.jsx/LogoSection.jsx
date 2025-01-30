@@ -17,7 +17,7 @@ function LogoSection() {
   ];
 
   return (
-    <div className="logos-container ld:flex md:flex justify-between gap-8 pt-5 h-24 md:pl-4 md:pt-6 grid grid-cols-3 w-full cursor-pointer">
+    <div className="filter grayscale-100 md:max-w-[1280px] max-w-full m-auto logos-container ld:flex md:flex justify-between gap-6 pt-5 h-24  md:pt-6 grid grid-cols-3 cursor-pointer p-4 ">
       {logos.map((logo) => (
         <img key={logo.id} src={logo.src} alt={`logo-${logo.id}`} />
       ))}

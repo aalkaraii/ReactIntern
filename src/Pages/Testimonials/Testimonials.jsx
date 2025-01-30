@@ -2,14 +2,24 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { PiStarFourFill } from "react-icons/pi";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
 
   return (
-    <div
+    <FaArrowRight
       className={className}
-      style={{ ...style, display: "block", background: "red" }}
+      style={{
+        ...style,
+        display: "block",
+        color: "white",
+        zIndex: 100,
+        top: "103%",
+        right: "32%",
+        right: window.innerWidth < 768 ? "10%" : "32%",
+      }}
       onClick={onClick}
     />
   );
@@ -18,17 +28,19 @@ function SampleNextArrow(props) {
 function SamplePrevArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
+    <FaArrowLeft
       className={className}
       style={{
         ...style,
         display: "block",
         zIndex: 100,
-        top: "90%",
-        left: "25%",
+        top: "103%",
+        left: "32%",
+        color: "white",
+        left: window.innerWidth < 768 ? "10%" : "32%",
       }}
       onClick={onClick}
-    ></div>
+    />
   );
 }
 
@@ -64,11 +76,11 @@ const Testimonials = () => {
     customPaging: function (i) {
       console.log("IIIII", i);
       return (
-        <div
-          className={`h-[10px] w-[10px] ${
-            i == activeIndex ? "bg-red-200" : "bg-gray-400"
+        <PiStarFourFill
+          className={`h-[24px] w-[24px] rotate-45 ${
+            i == activeIndex ? "text-[#B9FF66]" : "text-gray-200"
           }`}
-        ></div>
+        />
       );
     },
     dotsClass: "slick-dots slick-thumb",
@@ -80,29 +92,33 @@ const Testimonials = () => {
     centerMode: true,
     centerPadding: "260px",
     slidesToShow: 1,
+    centerPadding: window.innerWidth < 768 ? "0px" : "260px",
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     afterChange: (index) => setActiveIndex(index),
   };
 
   return (
-    <div className="w-[625px] h-[625px] pt-10">
-      <div className="flex">
-        <p className="bg-[#B9FF66] p-1 font-bold text-2xl rounded-lg">
+    <div className="max-w-[1280px] md:h-[625px] pt-10 p-4 m-auto">
+      <div className="md:flex-row flex-col flex md:justify-start md:items-start justify-center items-center gap-5">
+        <p className="bg-[#B9FF66] p-1 font-bold text-2xl rounded-lg inline">
           Testimonials
         </p>
-        <div className="w-[400px] pl-2">
+        <div className="md:w-[400px] w-[300px] pl-2 flex text-center md:text-start">
           Hear from Our Satisfied Clients: Read Our Testimonials to Learn More
           about Our Digital Marketing Services
         </div>
       </div>
-      <div className="pt-10 flex justify-center w-[1240px]">
-        <div className="bg-white rounded-4xl p-6 w-[1240px] ">
-          <div className="">
-            <Slider {...settings} className="bg-[#191A23] text-white p-6">
+      <div className=" md:pt-10 flex justify-center pt-12  md:w-fit">
+        <div className="bg-[#191A23] rounded-4xl md:pb-12 md:w-[1240px]  w-[332px] h-[450px] pr-0 ">
+          <div className="md:pr-0 ">
+            <Slider
+              {...settings}
+              className="bg-[#191A23] text-white pt-12 rounded-4xl pb-6"
+            >
               {slider.map((item) => (
                 <div key={item.id} className="">
-                  <div className="w-[550px] h-[200px] p-6 border-3 border-[#B9FF66] rounded-4xl overflow-hidden relative top-1.5">
+                  <div className="md:w-[550px] w-[330px] h-[200px] p-6 border-3 border-[#B9FF66] rounded-4xl overflow-hidden relative top-1.5 ">
                     {item.text}
                   </div>
 
@@ -111,7 +127,7 @@ const Testimonials = () => {
                     <div className=" bg-[#B9FF66] h-10 w-0.5  rotate-45"></div>
                   </div>
                   <div className="pl-23">
-                    <p className="text-[#B9FF66] mt-4">John Smith</p>
+                    <p className="text-[#B9FF66] md:mt-4">John Smith</p>
                     <p className="text-white">Marketing Director at XYZ Corp</p>
                   </div>
                 </div>

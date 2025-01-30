@@ -63,7 +63,7 @@ const Footer = () => {
           <div className="  ">
             <div className="flex md:flex-row flex-col justify-between items-center">
               <div className="flex  flex-col justify-center items-center md:justify-start md:items-start">
-                <p className=" bg-[#B9FF66] text-black w-fit md:p-2 p-1 rounded-xl font-semibold md:mt-0 mt-4">
+                <p className=" bg-[#B9FF66] text-black w-fit md:p-1 p-1 rounded-xl font-bold md:mt-0 mt-4">
                   Contact Us :
                 </p>
                 <p className=" md:pt-6 pt-4">Email:info@positiveus.com</p>
@@ -73,7 +73,7 @@ const Footer = () => {
                   12345
                 </p>
               </div>
-              <div className="md:p-0 p-6 ">
+              <div className="md:pt-0 md:pb-0 pt-6 pb-6">
                 <div className="flex md:flex-row flex-col bg-[#292A32] md:h-[184px] md:w-[634px] md:pl-[40px] md:pr-[40px] md:pt-[50px] md:pb-[50px] rounded-xl p-6 ">
                   <input
                     type="email"

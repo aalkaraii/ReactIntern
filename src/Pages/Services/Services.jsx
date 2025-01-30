@@ -43,43 +43,43 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex  flex-col gap-4 p-4 justify-center items-center pt-30 md:justify-start md:items-start">
-      <div className="md:flex md:flex-row md:justify-start md:items-start gap-4 flex flex-col justify-center items-center md:pl-10  ">
-        <div className="p-1 inline-block bg-[#B9FF66]  w-fit font-medium text-3xl rounded-2xl ">
+    <div className="flex  flex-col gap-4 p-4 justify-center items-center pt-40 md:pt-30 md:justify-start md:items-start">
+      <div className="md:flex md:flex-row md:justify-start md:items-start gap-4 flex flex-col justify-center items-center   ">
+        <div className="p-1  inline-block bg-[#B9FF66]  w-fit font-bold text-3xl rounded-xl ">
           Services
         </div>
-        <div className="md:flex md:flex-col gap-4 md:w-1/2 justify-center items-center text-center md:text-md">
+        <div className="md:flex md:flex-col md:gap-4 md:w-1/2 justify-center items-center text-center md:text-md">
           At our digital marketing agency, we offer a range of services to help
           businesses grow and succeed online. These services include:
         </div>
       </div>
-      <div className="md:flex md:flex-row md:justify-center md:items-center  flex flex-col justify-center items-center cursor-pointer  gap-[40px]">
-        <div className="grid grid-cols-1 md:gap-[40px] gap-8 md:grid-cols-2  ">
+      <div className="md:flex md:flex-row md:justify-center md:items-center  flex flex-col justify-center items-center cursor-pointer  md:gap-[40px] pt-10">
+        <div className="grid grid-cols-1 md:gap-[40px] gap-4 md:grid-cols-2">
           {card.map((item, index) => (
             <div
-              className="bg-gray-200 flex rounded-4xl border-2 border-black border-b-4 md:w-[600px] md:h-[310px] md:[310px]    p-[50px]"
+              className="bg-gray-200 flex rounded-4xl border-2 border-black border-b-4 md:w-[600px]  md:h-[310px] w-full p-[60px] md:p-[50px]"
               key={index}
               style={{ backgroundColor: item.color }}
             >
-              <div className=" justify-between p-2">
+              <div className=" justify-between  md:p-2">
                 <div className="text-2xl p-1 flex-col gap-1 md:w-52 rounded-md inline-block ">
                   <span
-                    className="inline"
+                    className="inline p-1 font-semibold"
                     style={{ backgroundColor: item.textbg }}
                   >
                     {item.title}
                   </span>
                 </div>
                 <button
-                  className="flex items-center space-x-2 pt-2"
+                  className="flex items-center space-x-2 pt-2 md:pt-24"
                   style={{ color: item.buttonColor }}
                 >
                   <img
                     src="src/assets/arrow.png"
                     alt="Arrow Icon"
-                    className="h-6"
+                    className="h-6 md:h-[44px]"
                   />
-                  <div className="hidden md:flex md:flex">Learn more</div>
+                  <div className="hidden md:flex md:pl-3 ">Learn more</div>
                 </button>
               </div>
               <img

@@ -52,13 +52,13 @@ const Working = () => {
 
   return (
     <div className="bg-red pt-20 p-4">
-      <div className="flex h-[51px] p-2 gap-4">
-        <div className="text-2xl p-1 flex-col gap-1 lg:w-52 inline-block">
-          <span className="inline bg-[#B9FF66] rounded-lg font-bold">
+      <div className="flex md:flex-row md:justify-start md:items-start justify-center items-center flex-col h-[51px] p-2 gap-4">
+        <div className="text-2xl p-0 flex-col gap-1  inline-block ">
+          <span className="inline bg-[#B9FF66] rounded-lg font-bold p-2">
             Our Working Process
           </span>
         </div>
-        <div className="w-[292px]">
+        <div className="w-[292px] text-center md:text-start">
           Step-by-Step Guide to Achieving Your Business Goals
         </div>
       </div>
@@ -66,7 +66,7 @@ const Working = () => {
         {work.map((item, index) => (
           <div
             key={item.id}
-            className={`border-b-3 rounded-3xl border-black border-1 p-[41px] flex relative ${
+            className={`border-b-6 md:rounded-4xl rounded-full border-black border-1 p-[41px] flex relative ${
               iconState[index] ? "bg-[#B9FF66]" : "bg-[#F3F3F3]"
             }`}
           >

@@ -13,7 +13,7 @@ const LetsMake = () => {
               succeed online.
             </div>
             <div className="pb-2 max-w-fit-content">
-              <button className=" bg-black text-white p-4  rounded-lg cursor-pointer mt-4 w-max  ">
+              <button className=" bg-black text-white p-4 md:pl-6 md:pr-6 rounded-lg cursor-pointer mt-4 w-max tracking-wider  ">
                 Get your free proposal
               </button>
             </div>

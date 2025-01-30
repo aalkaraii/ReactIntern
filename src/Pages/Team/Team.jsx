@@ -52,20 +52,20 @@ const Team = () => {
 
   return (
     <div className="p-4 pt-20 ">
-      <div className="flex gap-2">
+      <div className="flex md:flex-row md:justify-start md:items-start flex-col justify-center items-center gap-2 p-4">
         <header className="text-2xl font-bold mb-4 bg-[#B9FF66] p-1 rounded-sm ">
           Team
         </header>
-        <div className="w-[473px]">
+        <div className="md:w-[400px] w-[350px] pl-2 flex text-center md:text-start">
           Meet the skilled and experienced team behind our successful digital
           marketing strategies
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className="border rounded-lg p-4 shadow-md bg-white flex flex-col items-center"
+            className="border border-b-7 rounded-4xl p-4 shadow-md bg-white flex flex-col items-center"
           >
             <div className="flex items-center justify-between w-full mb-4 gap-4 relative">
               {/* Member's image */}
@@ -101,7 +101,7 @@ const Team = () => {
         </div>
       </div>
       <div className="flex justify-end align-end mt-10 ">
-        <button className="hidden md:flex bg-black text-white p-3 rounded-xl pl-12 pr-12 cursor-pointer">
+        <button className="hidden md:flex bg-black text-white p-3 rounded-xl pl-16 pr-16 cursor-pointer">
           See all team
         </button>
       </div>
