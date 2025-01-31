@@ -43,9 +43,9 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex  flex-col gap-4 p-4 justify-center items-center pt-40 md:pt-30 md:justify-start md:items-start">
+    <div className="flex  flex-col gap-4 p-4 justify-center items-center pt-10 md:pt-10 md:justify-start md:items-start">
       <div className="md:flex md:flex-row md:justify-start md:items-start gap-4 flex flex-col justify-center items-center   ">
-        <div className="p-1  inline-block bg-[#B9FF66]  w-fit font-bold text-3xl rounded-xl ">
+        <div className="p-1  inline-block bg-[#B9FF66]  w-fit font-bold text-2xl rounded-xl ">
           Services
         </div>
         <div className="md:flex md:flex-col md:gap-4 md:w-1/2 justify-center items-center text-center md:text-md">

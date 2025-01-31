@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
-import FirstPage from "../../FirstPage.jsx/FirstPage";
-import AboutUs from "../../Pages/AboutUs/AboutUs";
-import NavServices from "../../Pages/NavServices/NavServices";
-import UseCases from "../../Pages/UseCases/UseCases";
-import Pricing from "../../Pages/Pricing/Pricing";
-import Blog from "../../Pages/Blog/Blog";
 
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -16,7 +10,7 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="font-['Space_Grotesk'] flex md:flex-row lg:flex-row flex-col justify-between items-center md:max-w-[1280px] m-auto p-4">
+      <div className="font-['Space_Grotesk'] z- flex md:flex-row lg:flex-row flex-col justify-between items-center md:max-w-[1280px] m-auto p-4  ">
         <div className="flex flex-row justify-between items-center w-full">
           <Link to="/" className="w-[200px] h-[56px] p-2">
             <img src="src/assets/logo.png" alt="Logo" />
@@ -93,15 +87,6 @@ const NavBar = () => {
           </Link>
         </div>
       )}
-
-      <Routes>
-        <Route path="/" element={<FirstPage />} />
-        <Route path="/AboutUs" element={<AboutUs />} />
-        <Route path="/NavServices" element={<NavServices />} />
-        <Route path="/UseCases" element={<UseCases />} />
-        <Route path="/Pricing" element={<Pricing />} />
-        <Route path="/Blog" element={<Blog />} />
-      </Routes>
     </>
   );
 };

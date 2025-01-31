@@ -18,9 +18,9 @@ const CaseStudies = () => {
   return (
     <div className="max-w-[1280px] m-auto md:p-0 p-4 ">
       <section className="md:pt-20 ">
-        <div className="flex flex-col  justify-start items-start  md:p-[26px] rounded-4xl h-max ">
+        <div className="flex flex-col  justify-center items-center  md:p-[26px] rounded-4xl h-max ">
           <div className=" md:pl-0 pl-6 flex flex-col md:flex-row justify-center items-center gap-5">
-            <h1 className="font-bold text-2xl md:text-4xl bg-[#B9FF66] w-fit p-1 rounded-lg">
+            <h1 className="font-bold text-2xl md:text-2xl bg-[#B9FF66] w-fit p-1 rounded-lg">
               Case Studies
             </h1>
             <p className="w-[340px] text-center md:text-start">

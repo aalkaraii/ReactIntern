@@ -8,12 +8,17 @@ import Footer from "../Pages/Footer/Footer";
 import CaseStudies from "../Pages/CaseStudies/CaseStudies";
 import LogoSection from "../Components/LogoSectiom.jsx/LogoSection";
 import Testimonials from "../Pages/Testimonials/Testimonials";
+import NavBar from "../Components/NavBar.jsx/NavBar";
 
-const FirstPage = () => {
+const HomePage = () => {
   return (
     <>
-      <div className="w-fit font-['Space_Grotesk'] h-fit md:max-w-[1280px] max-w-full m-auto">
-        <div className="lg:flex p-4 flex justify-evenly items-center md:p-4 lg:gap-20 ">
+      <div className="w-fit font-['Space_Grotesk'] h-fit md:max-w-[1280px] max-w-full m-auto ">
+        <nav className="sticky top-0 z-50 bg-white ">
+          <NavBar></NavBar>
+        </nav>
+
+        <div className="lg:flex p-4 flex justify-evenly items-center md:p-4 lg:gap-20  ">
           <div className="flex flex-col lg:w-1/2 md:w-1/2 ">
             <div className="md:pl-2 mdp-4 md:text-4xl text-4xl font-bold w-it font-['Space_Grotesk'] ">
               Navigating the digital landscape for success
@@ -51,4 +56,4 @@ const FirstPage = () => {
   );
 };
 
-export default FirstPage;
+export default HomePage;

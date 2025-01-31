@@ -1,7 +1,12 @@
 import React from "react";
+import NavBar from "../../Components/NavBar.jsx/NavBar";
 
 const AboutUs = () => {
-  return <div className="bg-red-600 h-50">AboutUs</div>;
+  return (
+    <div className=" h-50">
+      <NavBar></NavBar>AboutUs
+    </div>
+  );
 };
 
 export default AboutUs;

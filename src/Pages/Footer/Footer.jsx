@@ -20,7 +20,7 @@ const Footer = () => {
                 <img src="src/assets/whiteLogo.png"></img>
               </Link>
             </div>
-            <div className=" flex md:flex-row flex-col  md:justify-between md:items-center md:w-[600px]">
+            <div className=" flex md:flex-row flex-col justify-center items-center  md:justify-between md:items-center md:w-[600px]">
               <Link
                 to={"/AboutUs"}
                 className="md:pt-0 pt-4 md:pb-5  md:text-start md:underline md:w-[100px]"
@@ -53,8 +53,11 @@ const Footer = () => {
               </Link>
             </div>
             <div className="md:flex ">
-              {socialMedia.map((item) => (
-                <div className="p-2 md:p-0 md:pl-6 hidden md:flex h-10 w-15 md:h-10 md:w-16">
+              {socialMedia.map((item, index) => (
+                <div
+                  key={index}
+                  className="p-2 md:p-0 md:pl-6 hidden md:flex h-10 w-15 md:h-10 md:w-16"
+                >
                   <img src={`${item.img}`}></img>
                 </div>
               ))}
@@ -88,8 +91,8 @@ const Footer = () => {
             </div>
             <div className="flex md:hidden justify-center items-center">
               {" "}
-              {socialMedia.map((item) => (
-                <div className="p-2   h-10 w-10">
+              {socialMedia.map((item, index) => (
+                <div key={index} className="p-2   h-10 w-10">
                   <img src={`${item.img}`}></img>
                 </div>
               ))}

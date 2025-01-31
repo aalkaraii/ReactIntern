@@ -92,7 +92,8 @@ const Testimonials = () => {
     centerMode: true,
     centerPadding: "260px",
     slidesToShow: 1,
-    centerPadding: window.innerWidth < 768 ? "0px" : "260px",
+
+    centerPadding: window.innerWidth < 768 ? "18px" : "260px",
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     afterChange: (index) => setActiveIndex(index),
@@ -109,8 +110,8 @@ const Testimonials = () => {
           about Our Digital Marketing Services
         </div>
       </div>
-      <div className=" md:pt-10 flex justify-center pt-12  md:w-fit">
-        <div className="bg-[#191A23] rounded-4xl md:pb-12 md:w-[1240px]  w-[332px] h-[450px] pr-0 ">
+      <div className=" md:pt-10 flex justify-center pt-12 md:w-fit">
+        <div className="bg-[#191A23] rounded-4xl md:pb-12 md:w-[1240px]  w-[370px] h-[450px] pr-0 ">
           <div className="md:pr-0 ">
             <Slider
               {...settings}

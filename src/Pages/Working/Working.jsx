@@ -66,7 +66,9 @@ const Working = () => {
         {work.map((item, index) => (
           <div
             key={item.id}
-            className={`border-b-6 md:rounded-4xl rounded-full border-black border-1 p-[41px] flex relative ${
+            className={`border-b-6 md:rounded-4xl ${
+              iconState[index] ? "rounded-4xl" : "rounded-full"
+            } border-black border-1 p-[41px] flex relative ${
               iconState[index] ? "bg-[#B9FF66]" : "bg-[#F3F3F3]"
             }`}
           >

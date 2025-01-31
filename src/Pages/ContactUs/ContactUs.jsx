@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 
 const ContactUs = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,22 +17,19 @@ const ContactUs = () => {
     e.preventDefault();
 
     emailjs
-      .send(
+      .sendForm(
         "service_l9rmxvs", // Replace with your EmailJS Service ID
-        "template_lj083do", // Replace with your EmailJS Template ID
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        },
-        "LOuiWouqD_db5AlbQ" // Public Key
+        "template_owfq8yn", // Replace with your EmailJS Template ID
+        form.current,
+        "x0WpLc62YiE6QeXMb" // Replace with your EmailJS Public Key
       )
       .then(
-        (response) => {
-          alert("Message sent successfully!");
+        () => {
+          alert("Email Sent!");
+          setFormData({ name: "", email: "", message: "" }); // Reset form
         },
         (error) => {
-          alert("Failed to send message. Please try again.");
+          console.error("Failed to send email", error.text);
         }
       );
   };
@@ -49,7 +47,34 @@ const ContactUs = () => {
       <div className="pt-[50px] ">
         <div className="flex flex-row lg:flex-row bg-[#F3F3F3] relative max-w-[1240px] m-auto rounded-4xl  overflow-hidden">
           <div className="flex flex-col flex-1 p-6 lg:p-10 gap-2 ">
-            <form onSubmit={sendEmail} className="max-w-[556px] flex flex-col">
+            <div className="flex gap-4">
+              <label className="flex items-center space-x-2  ">
+                <input
+                  type="radio"
+                  name="purpose"
+                  value="say_hi"
+                  className="scale-150 me-1"
+                  required
+                />
+                Say Hi
+              </label>
+
+              <label className="flex items-center space-x-2  ">
+                <input
+                  type="radio"
+                  name="purpose"
+                  value="business_inquiry"
+                  className="scale-150 me-1"
+                  required
+                />
+                Get a Quote
+              </label>
+            </div>{" "}
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="max-w-[556px] flex flex-col"
+            >
               <label htmlFor="name" className="pt-6 ">
                 Name
               </label>
@@ -61,6 +86,7 @@ const ContactUs = () => {
                 className="p-3 border-1 border-black rounded-xl bg-white"
                 value={formData.name}
                 onChange={handleChange}
+                required
               />
               <label htmlFor="email" className="pt-3">
                 Email*
@@ -73,6 +99,7 @@ const ContactUs = () => {
                 className="p-3 border border-black rounded-xl bg-white"
                 value={formData.email}
                 onChange={handleChange}
+                required
               />
               <label htmlFor="message" className="pt-3">
                 Message*
@@ -84,10 +111,17 @@ const ContactUs = () => {
                 className="p-3 border border-black rounded-xl h-32 resize-none bg-white"
                 value={formData.message}
                 onChange={handleChange}
+                required
               ></textarea>
               <button
                 type="submit"
                 className="hidden justify-center items-center md:flex mt-[40px] bg-[#191A23] text-white rounded-xl hover:bg-[#333] transition p-4"
+              >
+                Send Message
+              </button>
+              <button
+                type="submit"
+                className="md:hidden w-full mx-auto mt-4 bg-[#191A23] text-white py-2 px-4 rounded-xl hover:bg-[#333] transition pt-6 pb-4"
               >
                 Send Message
               </button>
@@ -101,12 +135,6 @@ const ContactUs = () => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          className="md:hidden w-full mx-auto  mt-4 bg-[#191A23] text-white py-2 px-4 rounded-xl hover:bg-[#333] transition pt-6 pb-4"
-        >
-          Send Message
-        </button>
       </div>
     </div>
   );

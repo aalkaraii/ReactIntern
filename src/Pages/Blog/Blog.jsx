@@ -1,7 +1,13 @@
 import React from "react";
+import NavBar from "../../Components/NavBar.jsx/NavBar";
 
 const Blog = () => {
-  return <div>Blog</div>;
+  return (
+    <div>
+      <NavBar />
+      Blog
+    </div>
+  );
 };
 
 export default Blog;

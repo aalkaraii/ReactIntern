@@ -5,6 +5,7 @@ import hubspot from "../../assets/hubspot.png";
 import netflix from "../../assets/netflix.png";
 import notion from "../../assets/notion.png";
 import zoom from "../../assets/zoom.png";
+import Marquee from "react-fast-marquee";
 
 function LogoSection() {
   const logos = [
@@ -17,11 +18,11 @@ function LogoSection() {
   ];
 
   return (
-    <div className="filter grayscale-100 md:max-w-[1280px] max-w-full m-auto logos-container ld:flex md:flex justify-between gap-6 pt-5 h-24  md:pt-6 grid grid-cols-3 cursor-pointer p-4 ">
+    <Marquee className="filter grayscale-100 md:max-w-[1280px] max-w-full m-auto logos-container ld:flex md:flex justify-between gap-6 pt-5   md:pt-6 grid grid-cols-3 cursor-pointer p-4 ">
       {logos.map((logo) => (
         <img key={logo.id} src={logo.src} alt={`logo-${logo.id}`} />
       ))}
-    </div>
+    </Marquee>
   );
 }
 

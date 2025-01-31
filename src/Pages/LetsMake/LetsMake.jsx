@@ -2,7 +2,7 @@ import React from "react";
 
 const LetsMake = () => {
   return (
-    <div className="md:w-[1240px] m-auto h-[347px] pt-10 p-4 md:relative ">
+    <div className="md:w-[1280px] m-auto h-[347px] pt-10 p-4 md:relative ">
       <section className="flex flex-col justify-start  items-start bg-[#F3F3F3] p-[26px] rounded-4xl h-max ">
         <div className="flex md:p-[50px]">
           <div className="md:width-[500px] md:gap-5">
