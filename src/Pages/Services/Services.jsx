@@ -1,41 +1,46 @@
 import React from "react";
-
+import click from "../../assets/click.png";
+import socialMedia from "../../assets/socialMedia.png";
+import email from "../../assets/email.png";
+import content from "../../assets/content.png";
+import analytics from "../../assets/analytics.png";
+import arrow from "../../assets/arrow.png";
 const Services = () => {
   const card = [
     {
       title: "Search engine optimization",
-      img: "src/assets/search.png",
+      img: { search },
       color: "#F3F3F3",
       textbg: "#B9FF66",
     },
     {
       title: "Pay-per-click advertising",
-      img: "src/assets/click.png",
+      img: { click },
       color: "#B9FF66",
       textbg: "white",
     },
     {
       title: "Social media marketing",
-      img: "src/assets/socialMedia.png",
+      img: { socialMedia },
       color: "#191A23",
       textbg: "white",
       buttonColor: "white",
     },
     {
       title: "Email Marketing",
-      img: "src/assets/email.png",
+      img: { email },
       color: "#F3F3F3",
       textbg: "#B9FF66",
     },
     {
       title: "Content creation",
-      img: "src/assets/content.png",
+      img: { content },
       color: "#B9FF66",
       textbg: "white",
     },
     {
       title: "Analytics and Tracking",
-      img: "src/assets/analytics.png",
+      img: { analytics },
       color: "#191A23",
       textbg: "white",
       buttonColor: "white",
@@ -75,7 +80,7 @@ const Services = () => {
                   style={{ color: item.buttonColor }}
                 >
                   <img
-                    src="src/assets/arrow.png"
+                    src={arrow}
                     alt="Arrow Icon"
                     className="h-6 md:h-[44px]"
                   />
