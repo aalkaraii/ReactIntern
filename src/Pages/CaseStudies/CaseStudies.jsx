@@ -1,5 +1,5 @@
 import React from "react";
-
+import arrow from "../../assets/arrow.png";
 const CaseStudies = () => {
   const caseStudies = [
     {
@@ -39,11 +39,7 @@ const CaseStudies = () => {
                 </p>
                 <div className="flex pt-4">
                   <p className="text-[#B9FF66] text-xl">Learn More</p>
-                  <img
-                    src="src/assets/arrow.png"
-                    alt="Arrow Icon"
-                    className="h-8 w-8  "
-                  />
+                  <img src={arrow} alt="Arrow Icon" className="h-8 w-8  " />
                 </div>
               </div>
               <div className="bg-white h-ful w-1"></div>
@@ -55,11 +51,7 @@ const CaseStudies = () => {
                 </p>
                 <div className="flex pt-10">
                   <p className="text-[#B9FF66] text-xl">Learn More</p>
-                  <img
-                    src="src/assets/arrow.png"
-                    alt="Arrow Icon"
-                    className="h-8 w-8 "
-                  />
+                  <img src={arrow} alt="Arrow Icon" className="h-8 w-8 " />
                 </div>{" "}
               </div>
               <div className="bg-white h-ful w-1"></div>
@@ -71,11 +63,7 @@ const CaseStudies = () => {
                 </p>
                 <div className="flex pt-4">
                   <p className="text-[#B9FF66] text-xl ">Learn More</p>
-                  <img
-                    src="src/assets/arrow.png"
-                    alt="Arrow Icon"
-                    className="h-8 w-8 "
-                  />
+                  <img src={arrow} alt="Arrow Icon" className="h-8 w-8 " />
                 </div>
               </div>
             </div>
@@ -92,11 +80,7 @@ const CaseStudies = () => {
                   </div>
                   <button className="flex items-center space-x-2 pt-2 text-xl text-[#B9FF66]">
                     <div>Learn more</div>
-                    <img
-                      src="src/assets/arrow.png"
-                      alt="Arrow Icon"
-                      className="h-6 "
-                    />
+                    <img src={arrow} alt="Arrow Icon" className="h-6 " />
                   </button>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
-
+import contactus from "../../assets/contactus.png";
 const ContactUs = () => {
   const form = useRef();
   const [formData, setFormData] = useState({
@@ -129,7 +129,7 @@ const ContactUs = () => {
           </div>
           <div className="hidden lg:flex  justify-center items-center">
             <img
-              src="src/assets/contactus.png"
+              src={contactus}
               alt="Contact Us"
               className="w-[491px] h-[648] absolute right-[-3/2]"
             />

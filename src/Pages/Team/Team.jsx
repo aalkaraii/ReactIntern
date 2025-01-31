@@ -1,9 +1,14 @@
 import React from "react";
-
+import janeDoe from "../../assets/janeDoe.png";
+import Michael from "../../assets/Michael.png";
+import Emily from "../../assets/Emily.png";
+import brian from "../../assets/brian.png";
+import sarah from "../../assets/sarah.png";
+import Linkdin from "../../assets/Linkdin.png";
 const Team = () => {
   const teamMembers = [
     {
-      img: "src/assets/janeDoe.png",
+      img: { janeDoe },
       name: "Jane Doe",
       title: "Director of Operations",
       experience:
@@ -11,21 +16,21 @@ const Team = () => {
       skills: "Strong organizational and communication skills",
     },
     {
-      img: "src/assets/Michael.png",
+      img: { Michael },
       name: "Michael Brown",
       title: "Senior SEO Specialist",
       experience: "5+ years of experience in SEO and content creation.",
       skills: "Proficient in keyword research and on-page optimization",
     },
     {
-      img: "src/assets/Emily.png",
+      img: { Emily },
       name: "Emily Johnson",
       title: "PPC Manager",
       experience: "3+ years of experience in paid search advertising.",
       skills: "Skilled in campaign management and performance analysis",
     },
     {
-      img: "src/assets/brian.png",
+      img: { brian },
       name: "Brian Williams",
       title: "Social Media Specialist",
       experience: "4+ years of experience in social media marketing.",
@@ -33,7 +38,7 @@ const Team = () => {
         "Proficient in creating and scheduling content, analyzing metrics, and building engagement",
     },
     {
-      img: "src/assets/sarah.png",
+      img: { sarah },
       name: "Sarah Kim",
       title: "Content Creator",
       experience: "2+ years of experience in writing and editing.",
@@ -41,7 +46,7 @@ const Team = () => {
         "Skilled in creating compelling, SEO-optimized content for various industries",
     },
     {
-      img: "src/assets/sarah.png",
+      img: { sarah },
       name: "Sarah Kim",
       title: "Content Creator",
       experience: "2+ years of experience in writing and editing.",
@@ -80,7 +85,7 @@ const Team = () => {
               </div>
               {/* LinkedIn icon */}
               <img
-                src="src/assets/Linkdin.png"
+                src={Linkdin}
                 alt="LinkedIn"
                 className="h-[34px] w-[34px] absolute top-2 right-0"
               />

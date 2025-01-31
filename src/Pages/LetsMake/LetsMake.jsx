@@ -1,5 +1,5 @@
 import React from "react";
-
+import starFace from "../../assets/starFace.png";
 const LetsMake = () => {
   return (
     <div className="md:w-[1280px] m-auto h-[347px] pt-10 p-4 md:relative ">
@@ -19,7 +19,7 @@ const LetsMake = () => {
             </div>
           </div>
           <div className="hidden md:flex w-full md:w-[360px] absolute right-12 top-2 ">
-            <img src="src/assets/starFace.png"></img>
+            <img src={starFace}></img>
           </div>
         </div>
       </section>

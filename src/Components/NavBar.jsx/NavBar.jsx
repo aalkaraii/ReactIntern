@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
-
+import logo from "../../assets/logo.png";
 const NavBar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const navbar = () => {
@@ -13,7 +13,7 @@ const NavBar = () => {
       <div className="font-['Space_Grotesk'] z- flex md:flex-row lg:flex-row flex-col justify-between items-center md:max-w-[1280px] m-auto p-4  ">
         <div className="flex flex-row justify-between items-center w-full">
           <Link to="/" className="w-[200px] h-[56px] p-2">
-            <img src="src/assets/logo.png" alt="Logo" />
+            <img src={logo} alt="Logo" />
           </Link>
           <div className="hidden md:flex lg:flex justify-end items-center gap-10 flex-1">
             <Link to="/AboutUs" className="hover:bg-[#B9FF66] p-2 rounded-xl">

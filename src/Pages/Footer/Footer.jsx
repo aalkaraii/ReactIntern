@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import whiteLinkdin from "../../assets/whiteLinkdin.png";
+import whiteFacebook from "../../assets/whiteFacebook.png";
+import whiteTwitter from "../../assets/whiteTwitter.png";
+import whiteLogo from "../../assets/whiteLogo.png";
 const Footer = () => {
   const socialMedia = [
-    { id: 1, img: "src/assets/whiteLinkdin.png" },
-    { id: 2, img: " src/assets/whiteFacebook.png" },
-    { id: 3, img: "src/assets/whiteTwitter.png" },
+    { id: 1, img: whiteLinkdin },
+    { id: 2, img: whiteFacebook },
+    { id: 3, img: whiteTwitter },
   ];
   return (
     <>
@@ -17,7 +20,7 @@ const Footer = () => {
                 to={"/"}
                 className="w-[219.54px] h-[56px]  pb-2.5 gap-2.5 cursor-pointer "
               >
-                <img src="src/assets/whiteLogo.png"></img>
+                <img src={whiteLogo}></img>
               </Link>
             </div>
             <div className=" flex md:flex-row flex-col justify-center items-center  md:justify-between md:items-center md:w-[600px]">

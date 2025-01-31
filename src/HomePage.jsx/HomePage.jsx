@@ -9,7 +9,7 @@ import CaseStudies from "../Pages/CaseStudies/CaseStudies";
 import LogoSection from "../Components/LogoSectiom.jsx/LogoSection";
 import Testimonials from "../Pages/Testimonials/Testimonials";
 import NavBar from "../Components/NavBar.jsx/NavBar";
-
+import mic from "../assets/mic.png";
 const HomePage = () => {
   return (
     <>
@@ -24,7 +24,7 @@ const HomePage = () => {
               Navigating the digital landscape for success
             </div>
             <div className="md:hidden flex flex-col justify-end items-end ">
-              <img src="src/assets/mic.png"></img>
+              <img src={mic}></img>
             </div>
             <div className="text-sm md:pl-2 md:p-4 md:text-lg pt-4 ">
               Our digital marketing agency helps businesses grow and succeed
@@ -39,7 +39,7 @@ const HomePage = () => {
           </div>
 
           <div className=" hidden md:flex flex-col justify-end items-end ">
-            <img src="src/assets/mic.png"></img>
+            <img src={mic}></img>
           </div>
         </div>
         <LogoSection />

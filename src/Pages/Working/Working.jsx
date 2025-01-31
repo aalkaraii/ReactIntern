@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import minus from "../../assets/minus.png";
+import add from "../../assets/add.png";
 const Working = () => {
   const work = [
     {
@@ -94,11 +95,7 @@ const Working = () => {
                 onClick={() => changeIcon(index)}
               >
                 <img
-                  src={
-                    iconState[index]
-                      ? "src/assets/minus.png"
-                      : "src/assets/add.png"
-                  }
+                  src={iconState[index] ? { minus } : { add }}
                   alt={iconState[index] ? "minus" : "add"}
                 />
               </button>
