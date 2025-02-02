@@ -1,5 +1,4 @@
 import React from "react";
-import janeDoe from "../../assets/janeDoe.png";
 import Michael from "../../assets/Michael.png";
 import Emily from "../../assets/Emily.png";
 import brian from "../../assets/brian.png";
@@ -8,7 +7,7 @@ import Linkdin from "../../assets/Linkdin.png";
 const Team = () => {
   const teamMembers = [
     {
-      img: { janeDoe },
+      img: "src/assets/janeDoe.png",
       name: "Jane Doe",
       title: "Director of Operations",
       experience:
@@ -16,21 +15,21 @@ const Team = () => {
       skills: "Strong organizational and communication skills",
     },
     {
-      img: { Michael },
+      img: "src/assets/Michael.png",
       name: "Michael Brown",
       title: "Senior SEO Specialist",
       experience: "5+ years of experience in SEO and content creation.",
       skills: "Proficient in keyword research and on-page optimization",
     },
     {
-      img: { Emily },
+      img: "src/assets/Emily.png",
       name: "Emily Johnson",
       title: "PPC Manager",
       experience: "3+ years of experience in paid search advertising.",
       skills: "Skilled in campaign management and performance analysis",
     },
     {
-      img: { brian },
+      img: "src/assets/brian.png",
       name: "Brian Williams",
       title: "Social Media Specialist",
       experience: "4+ years of experience in social media marketing.",
@@ -38,7 +37,7 @@ const Team = () => {
         "Proficient in creating and scheduling content, analyzing metrics, and building engagement",
     },
     {
-      img: { sarah },
+      img: "src/assets/sarah.png",
       name: "Sarah Kim",
       title: "Content Creator",
       experience: "2+ years of experience in writing and editing.",
@@ -46,7 +45,7 @@ const Team = () => {
         "Skilled in creating compelling, SEO-optimized content for various industries",
     },
     {
-      img: { sarah },
+      img: "src/assets/sarah.png",
       name: "Sarah Kim",
       title: "Content Creator",
       experience: "2+ years of experience in writing and editing.",

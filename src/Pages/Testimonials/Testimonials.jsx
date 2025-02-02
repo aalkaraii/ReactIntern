@@ -123,9 +123,8 @@ const Testimonials = () => {
                     {item.text}
                   </div>
 
-                  <div className="h-[64px] w-[200px] flex gap-6.5 pl-18  relative ">
-                    <div className=" bg-[#B9FF66] h-10 w-0.5 rotate-135"></div>
-                    <div className=" bg-[#B9FF66] h-10 w-0.5  rotate-45"></div>
+                  <div className="h-[64px] w-[300px] flex gap-6.5 pl-18  relative ">
+                    <div className="absolute -top-2.5 left-10 w-8 h-8 bg-[#191A23] -rotate-45 border-l-3 border-b-3 border-b border-[#B9FF66]" />
                   </div>
                   <div className="pl-23">
                     <p className="text-[#B9FF66] md:mt-4">John Smith</p>

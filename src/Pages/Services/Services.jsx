@@ -5,6 +5,7 @@ import email from "../../assets/email.png";
 import content from "../../assets/content.png";
 import analytics from "../../assets/analytics.png";
 import arrow from "../../assets/arrow.png";
+import search from "../../assets/search.png";
 const Services = () => {
   const card = [
     {

@@ -95,7 +95,11 @@ const Working = () => {
                 onClick={() => changeIcon(index)}
               >
                 <img
-                  src={iconState[index] ? { minus } : { add }}
+                  src={
+                    iconState[index]
+                      ? "src/assets/minus.png"
+                      : "src/assets/add.png"
+                  }
                   alt={iconState[index] ? "minus" : "add"}
                 />
               </button>
