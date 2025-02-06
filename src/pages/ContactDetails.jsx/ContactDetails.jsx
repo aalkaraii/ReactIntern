@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { User, Mail, Phone, Building } from "lucide-react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
+import { ContactContext } from "./Context";
 
-const arr = [
+const fields = [
   {
     id: "name",
     name: "name",
@@ -39,31 +38,20 @@ const arr = [
 ];
 
 const ContactDetails = ({ isSubmitTrue }) => {
-  const formik = useFormik({
-    initialValues: { name: "", email: "", phone: "", company: "" },
-    validationSchema: Yup.object({
-      name: Yup.string().required("Name is required"),
-      email: Yup.string().email("Invalid email").required("Email is required"),
-      phone: Yup.string()
-        .matches(/^\d{10}$/, "Phone number must be 10 digits")
-        .required("Phone number is required"),
-      company: Yup.string().required("Company name is required"),
-    }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
-  });
+  const { formik, selectBox } = useContext(ContactContext);
 
   useEffect(() => {
-    isSubmitTrue(Object.keys(formik.errors).length === 0); // Pass validation status to HomePage
-  }, [formik.errors, isSubmitTrue]);
+    formik.validateForm().then((errors) => {
+      isSubmitTrue(Object.keys(errors).length === 0);
+    });
+  }, [formik.values, selectBox.values.selectedServices, isSubmitTrue]);
 
   return (
     <form
       onSubmit={formik.handleSubmit}
       className="grid pt-13 grid-cols-1 md:grid-cols-2 gap-4"
     >
-      {arr.map((field) => (
+      {fields.map((field) => (
         <div key={field.name} className="relative">
           <label className="block font-medium text-gray-700">
             {field.label}
@@ -75,6 +63,7 @@ const ContactDetails = ({ isSubmitTrue }) => {
               type={field.type}
               placeholder={field.placeholder}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
               value={formik.values[field.name]}
               className={`w-full border rounded-full px-4 py-3 pr-10 shadow-sm ${
                 formik.errors[field.name]
@@ -87,24 +76,15 @@ const ContactDetails = ({ isSubmitTrue }) => {
                 {formik.errors[field.name]}
               </div>
             )}
-            <field.icon
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"
-              size={20}
-            />
+            {/* Fixing icon rendering */}
+            {React.createElement(field.icon, {
+              className:
+                "absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400",
+              size: 20,
+            })}
           </div>
         </div>
       ))}
-      <button
-        type="submit"
-        disabled={Object.keys(formik.errors).length > 0}
-        className={`px-4 py-2 rounded ${
-          Object.keys(formik.errors).length === 0
-            ? "bg-blue-500"
-            : "bg-gray-400 cursor-not-allowed"
-        }`}
-      >
-        Submit
-      </button>
     </form>
   );
 };

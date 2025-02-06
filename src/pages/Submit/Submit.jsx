@@ -12,7 +12,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex justify-start w-[698px] ">
+    <div className="flex justify-start w-[698px] pl-14">
       <div className=" rounded-3xl bg-white">
         <div className="flex flex-col items-center ">
           <div className="h-[157px]  w-[157px]">

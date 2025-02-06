@@ -1,43 +1,52 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { HiMiniCommandLine } from "react-icons/hi2";
+import { ContactContext } from "../ContactDetails.jsx/Context";
 
-const ProjectQuote = () => {
-  const [checked, setIsChecked] = useState([]);
+const ProjectQuote = ({ isClickTrue }) => {
+  const { selectBox } = useContext(ContactContext);
 
   const services = [
-    { id: 1, name: "Development", icon: <HiMiniCommandLine /> },
-    { id: 2, name: "Web Design", icon: <HiMiniCommandLine /> },
-    { id: 3, name: "Marketing", icon: <HiMiniCommandLine /> },
-    { id: 4, name: "Others", icon: <HiMiniCommandLine /> },
+    { id: "Development", name: "Development", icon: <HiMiniCommandLine /> },
+    { id: "Web Design", name: "Web Design", icon: <HiMiniCommandLine /> },
+    { id: "Marketing", name: "Marketing", icon: <HiMiniCommandLine /> },
+    { id: "Others", name: "Others", icon: <HiMiniCommandLine /> },
   ];
 
-  function checkHandler(id) {
-    setIsChecked((prev) =>
-      prev.includes(id)
-        ? prev.filter((serviceId) => serviceId !== id)
-        : [...prev, id]
-    );
-  }
+  useEffect(() => {
+    if (typeof isClickTrue === "function") {
+      isClickTrue(selectBox.values.selectedServices.length > 0);
+    }
+  }, [selectBox.values.selectedServices, isClickTrue]);
+
+  const handleServiceClick = (serviceId) => {
+    const newSelected = selectBox.values.selectedServices.includes(serviceId)
+      ? selectBox.values.selectedServices.filter((s) => s !== serviceId)
+      : [...selectBox.values.selectedServices, serviceId];
+
+    selectBox.setFieldValue("selectedServices", newSelected);
+  };
 
   return (
     <div className="flex justify-start w-[698px]">
-      <div className="rounded-3xl bg-white ">
-        <div className="text-start pt-10">
+      <form
+        className="rounded-3xl bg-white p-6"
+        onClick={selectBox.handleClick}
+      >
+        <div className="text-start pt-4">
           <p className="font-bold text-xl text-gray-900">Our Services</p>
-          <p className="text-gray-500 pt-4">
+          <p className="text-gray-500 pt-2">
             Please select which service you are interested in.
           </p>
         </div>
 
-        {/* Service Selection Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 pt-6 gap-6">
           {services.map((service) => (
             <div
               key={service.id}
-              onClick={() => checkHandler(service.id)}
+              onClick={() => handleServiceClick(service.id)}
               className={`flex items-center gap-3 border p-4 rounded-xl w-[284px] cursor-pointer transition-all 
                 ${
-                  checked.includes(service.id)
+                  selectBox.values.selectedServices.includes(service.id)
                     ? "border-blue-500 bg-blue-100"
                     : "border-gray-300 hover:bg-gray-100"
                 }`}
@@ -47,7 +56,14 @@ const ProjectQuote = () => {
             </div>
           ))}
         </div>
-      </div>
+
+        {selectBox.errors.selectedServices &&
+          selectBox.touched.selectedServices && (
+            <div className="text-red-500 pt-2">
+              {selectBox.errors.selectedServices}
+            </div>
+          )}
+      </form>
     </div>
   );
 };
