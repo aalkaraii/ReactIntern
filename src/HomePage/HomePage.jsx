@@ -5,6 +5,7 @@ import Services from "../pages/Submit/Submit";
 import ProjectBudget from "../pages/ProjectBudget/ProjectBudget";
 import ContactDetails from "../pages/ContactDetails.jsx/ContactDetails";
 import { ContactContext } from "../pages/ContactDetails.jsx/Context";
+import SubmittedPage from "../pages/SubmittedPage/SubmittedPage";
 
 const HomePage = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -13,7 +14,9 @@ const HomePage = () => {
   const [isSelectValid, setIsSelectValid] = useState(false);
   const { formik } = useContext(ContactContext);
 
-  // Ensure validation updates when form changes
+  // State to control whether the form is submitted
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   useEffect(() => {
     formik.validateForm().then((errors) => {
       setIsFormValid(Object.keys(errors).length === 0);
@@ -56,6 +59,14 @@ const HomePage = () => {
     setCurrentStep((prev) => Math.max(prev - 1, 0));
   };
 
+  const handleSubmit = () => {
+    setIsSubmitted(true);
+  };
+
+  if (isSubmitted) {
+    return <SubmittedPage onClose={() => setIsSubmitted(false)} />;
+  }
+
   return (
     <div className="p-6 flex flex-col justify-center items-center">
       <HeaderOnly />
@@ -69,7 +80,6 @@ const HomePage = () => {
             ></div>
           </div>
 
-          {/* Step Indicator */}
           <div className="absolute top-45 left-77 flex justify-between p-4">
             {[1, 2, 3, 4].map((num) => (
               <div key={num} className="flex items-center px-24">
@@ -88,12 +98,9 @@ const HomePage = () => {
             ))}
           </div>
 
-          {/* Step Content */}
           <div className="p-6">{steps[currentStep].component}</div>
 
-          {/* Navigation Buttons */}
           <div className="flex justify-between p-6">
-            {/* Previous Button */}
             <button
               onClick={handlePrevious}
               disabled={currentStep === 0}
@@ -106,17 +113,27 @@ const HomePage = () => {
               Previous
             </button>
 
-            {/* Next Button */}
             <button
               onClick={handleNext}
               disabled={isNextDisabled}
               className={`px-4 py-2 rounded ${
+                currentStep === steps.length - 1 ? "hidden" : "block"
+              } ${
                 isNextDisabled
                   ? "bg-gray-300 cursor-not-allowed"
                   : "bg-blue-500 text-white cursor-pointer"
               }`}
             >
-              {currentStep === steps.length - 1 ? "Submit" : "Next"}
+              {currentStep === steps.length - 1 ? "submit" : "Next"}
+            </button>
+
+            <button
+              onClick={handleSubmit}
+              className={` p-3 bg-green-500 rounded-2xl ${
+                currentStep === steps.length - 1 ? "block" : "hidden"
+              }`}
+            >
+              Submit
             </button>
           </div>
         </div>
