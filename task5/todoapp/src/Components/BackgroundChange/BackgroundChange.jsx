@@ -23,14 +23,14 @@ export const ThemeProvider = ({ children }) => {
       };
 
   const bgColor = isDarkTheme
-    ? { backgroundColor: "#2a2d3e", color: "white" }
-    : { backgroundColor: "#d0d3dc", color: "black" };
+    ? { backgroundColor: "#111827", color: "white" }
+    : { backgroundColor: "#F7F7F7", color: "black" };
 
   const darkIcon = isDarkTheme ? <FaSun /> : <FaMoon />;
 
   const listColor = isDarkTheme
-    ? { backgroundColor: "#4a4e69", color: "white" }
-    : { backgroundColor: "white", color: "black" };
+    ? { backgroundColor: "#2a2d3e", color: "white", width: 400 }
+    : { backgroundColor: "white", color: "black", width: 400 };
 
   return (
     <ThemeContext.Provider
